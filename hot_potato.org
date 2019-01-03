@@ -1,0 +1,31 @@
+* Hot Potato
+Hot Potato is a party game with simple [[https://en.wikipedia.org/wiki/Hot_potato_(game)][rules]]. But it requires somobody to play/pause video without playing actual game. So I've wrote simple
+JavaScript to automate this.
+
+** Instruction:
+1. Open any video on YouTube
+2. Open *Developer Tools* console
+3. Paste JavaScript below and press Enter
+
+#+BEGIN_SRC javascript
+var play_seconds = 20;  // seconds
+var play_variation = 5;  // +- seconds
+var pause_seconds = 5;  // seconds
+
+function sleep(s) {
+    return new Promise(resolve => setTimeout(resolve, s * 1000));
+}
+
+async function game() {
+    var video = document.getElementById('movie_player');
+    while (true) {
+        console.log('play')
+        video.playVideo();
+        await sleep(play_seconds + Math.floor((Math.random() * (2 * play_variation)) - play_variation));
+        console.log('pause')
+        video.pauseVideo();
+        await sleep(pause_seconds);
+    }
+}
+game()
+#+END_SRC
