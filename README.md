@@ -7,3 +7,4 @@ Here I'm saving results from presentation, papers etc.
 - `vae` - Notebooks about exploring variational autoencoder (VAE). I've trained simple autoencoder, VAE, beta-VAE. Played with their latent space, math operation and compared results
 - `Exploring Gini impurity vs Entropy.ipynb` - Notebook about exploring difference between Gini Impurity vs Entropy for Decision trees
 - `style_transfer` - playing with original Style Transfer paper
+- `bilateral_filter` - implementation for Bilateral Grid
